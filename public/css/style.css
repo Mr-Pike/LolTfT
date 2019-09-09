@@ -1,0 +1,76 @@
+/* Menu. */
+.bg-darkblue {
+    background-color: #010710;
+}
+
+.navbar {
+    border-bottom: 2px solid #785a28;
+    padding: 0rem 0rem;
+}
+
+.navbar .active {
+    background-image: url('/images/select.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 100%;
+
+}
+
+.nav-link {
+    padding: 1.2rem 1rem;
+}
+
+.brand {
+    height: 26px;
+}
+/**/
+.champions-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.champions-icon-1 {
+    border: 1px solid #787878;
+}
+
+.champions-icon-2 {
+    border: 1px solid #1a5b17;
+}
+
+.champions-icon-3 {
+    border: 1px solid #0f43c6;
+}
+
+.champions-icon-4 {
+    border: 1px solid #c312b4;
+}
+
+.champions-icon-5 {
+    border: 1px solid #ffb400;
+}
+
+.origins-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.classes-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+body {
+    background: #010a14;
+}
+
+th {
+    color: #fff !important;
+}
+
+td {
+    color: #fff !important;
+}
