@@ -64,15 +64,16 @@
             </div>
 
             @yield('content')
-
-            <div class="row">
-                <footer>
-                    <div id="credits">
-
-                    </div>
-                </footer>
-            </div>
         </div>
+
+        <footer class="footer">
+            <div class="container text-center">
+                <span>
+                    Patch 9.17<br />
+                    League of Legends et Riot Games sont des marques ou marques déposées de Riot Games, Inc. League of Legends © Riot Games, Inc.
+                </span>
+            </div>
+        </footer>
 
         <script type="text/javascript" src="{{ URL::asset('/js/jquery-3.4.1.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('/js/bootstrap.min.js') }}"></script>

@@ -17,6 +17,7 @@
                             <th>Origines</th>
                             <th>Classes</th>
                             <th>Objets</th>
+                            <th>Tiers</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,11 @@
                                         @endforeach
                                     </div>
                                 </td>
+                                <td class="align-middle">
+                                    <div class="tier-id tier-id-{{ $champion->tier_id}}">
+                                        {{ $champion->tier_name }}
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -82,6 +88,9 @@
             },
             "columnDefs": [{
                 "targets": 3,
+                "orderable": false
+            }, {
+                "targets": 4,
                 "orderable": false
             }]
             // "lengthMenu": [[6, 12, 18, -1], ['6', '12', '18', 'Tout']]
