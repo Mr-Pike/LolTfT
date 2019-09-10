@@ -1,4 +1,22 @@
-/* Menu. */
+/*
+    General.
+*/
+body {
+    background: #010a14;
+    color: #fff !important;
+}
+
+th {
+    color: #fff !important;
+}
+
+td {
+    color: #fff !important;
+}
+
+/*
+    Menu.
+*/
 .bg-darkblue {
     background-color: #010710;
 }
@@ -23,6 +41,7 @@
 .brand {
     height: 26px;
 }
+
 /**/
 .champions-icon {
     width: 50px;
@@ -62,15 +81,50 @@
     margin-right: 10px;
 }
 
-
-body {
-    background: #010a14;
+.item-image {
+    border: 1px solid #785a28;
 }
 
-th {
-    color: #fff !important;
+/*
+    Bootsrap custom.
+*/
+.form-control, .form-control-sm {
+    border: 1px solid #785a28;
+    border-radius: 0;
+    background-color: #01101a;
+    color: #fff;
 }
 
-td {
-    color: #fff !important;
+.form-control:focus, .form-control-sm:focus {
+    color: #fff;
+    background-color: #01101a;
+    border-color: #785a28;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: #01101a;
+}
+
+.page-link {
+    color: #fff;
+    background-color: #010a14;
+    border: 1px solid #785a28;
+}
+.page-item.disabled .page-link {
+    color: #fff;
+    background-color:#010a14;
+    border-color:#785a28;
+}
+.page-item.active .page-link {
+    background-color:#785a28;
+    border-color:    #785a28;
+}
+
+.page-link:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color:#785a28;
+    border-color:    #785a28;
 }

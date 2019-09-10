@@ -21,9 +21,9 @@ class ChampionController extends BaseController
         return view('champions.index', compact('champions'));
     }
 
-    /*
-    Old method.
-    public function index($id)
+
+    // Old method.
+    /*public function index()
     {
         $champions = Champion::with('cost', 'tiers', 'classes', 'origins','items')->get();
         $items = Item::all()->keyBy('id');
