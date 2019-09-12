@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ChampionMainView extends Model
+class ViewChampionMain extends Model
 {
     protected $table = '_championsmainview';
     protected $primaryKey = 'id';

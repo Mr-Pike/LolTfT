@@ -7,6 +7,7 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="ML">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>LoLTfT - @yield('title')</title>
         <link href="{{ URL::asset('/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('/css/style.css') }}" rel="stylesheet">
@@ -34,6 +35,9 @@
                         <li class="nav-item {{ Request::route()->getName() == 'champions.index' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('champions.index') }}">Champions</a>
                         </li>
+                        <li class="nav-item {{ Request::route()->getName() == 'champions.stats' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('champions.stats') }}">Statistiques</a>
+                        </li>
                         <li class="nav-item {{ Request::route()->getName() == 'items.index' ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('items.index') }}">Objets</a>
                             </li>
@@ -57,7 +61,7 @@
         <div class="nav-wrapper container">
 
             <div class="row">
-                <div class="col-xs-12 dashboard-header">
+                <div class="col-xl-12 col-md-12 col-xs-12 dashboard-header">
                     <h1 class="dash-title">@yield('pageTitle')</h1>
                     <p class="text-muted">@yield('pageSubTitle')</p>
                 </div>

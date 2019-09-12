@@ -105,6 +105,7 @@ td {
     text-align: center;
     border-radius: 15px;
     line-height: 18px;
+    margin: auto;
 }
 
 .tier-id-1 {
@@ -179,4 +180,10 @@ td {
     text-decoration: none;
     background-color:#785a28;
     border-color:    #785a28;
+}
+
+#datatable_processing {
+    color: #fff;
+    background-color: #010a14;
+    border: 1px solid #785a28;
 }

@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Default.
+Route::get('/', 'DefaultController@index');
 
-Route::resource('champions', 'ChampionController');
-Route::resource('items', 'ItemController');
+// Champions.
+Route::get('champions', ['uses' => 'ChampionController@index', 'as' => 'champions.index']);
+Route::get('champions/statistiques', ['uses' => 'ChampionController@stats', 'as' => 'champions.stats']);
+Route::post('champions/statistiques/{levelId}', ['uses' => 'ChampionController@dataStats', 'as' => 'champions.dataStats'])->where('levelId', '[0-9]+');;
+
+Route::get('items', ['uses' => 'ItemController@index', 'as' => 'items.index']);

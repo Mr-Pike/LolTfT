@@ -13,7 +13,7 @@ class ChampionClass extends Model
     public $timestamps = false;
     public $incrementing = false;
 
-    public function champions() 
+    public function champions()
     {
         return $this->belongsToMany(Champion::class, 'id', 'champion_id');
     }

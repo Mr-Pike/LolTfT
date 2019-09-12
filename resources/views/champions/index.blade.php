@@ -23,39 +23,35 @@
                     <tbody>
                         @foreach($champions as $champion)
                             <tr>
-                                <td class="align-middle">
+                                <td class="align-middle text-sm-center text-md-center text-lg-lef text-xl-left">
                                     <img class="champions-icon champions-icon-{{ $champion->cost_cost }}" src="/images/champions/{{ $champion->image }}" alt="{{ $champion->name }}" />
-                                    {{ $champion->name }}
+                                    <span class="d-none d-xl-inline d-lg-line">{{ $champion->name }}</span>
                                 </td>
-                                <td class="align-middle">
-                                    <span>
+                                <td class="align-middle text-sm-center text-md-center text-lg-lef text-xl-left">
                                     @foreach($champion->origins as $origine)
                                         <img class="origins-icon" src="/images/origins/{{ $origine->image }}" alt="{{ $origine->name }}" />
-                                        {{ $origine->name }}<br />
+                                        <span class="d-none d-xl-inline d-lg-line">{{ $origine->name }}<br /></span>
                                     @endforeach
-                                    </span>
                                 </td>
-                                <td class="align-middle">
-                                    <span>
+                                <td class="align-middle text-sm-center text-md-center text-lg-lef text-xl-left">
                                     @foreach($champion->classes as $class)
                                         <img class="classes-icon" src="/images/classes/{{ $class->image }}" alt="{{ $class->name }}" />
-                                        {{ $class->name }}<br />
+                                        <span class="d-none d-xl-inline d-lg-line">{{ $class->name }}<br /></span>
                                     @endforeach
-                                    </span>
                                 </td>
                                 <td>
-                                    <div class="d-flex" style="width:300px;">
+                                    <div class="d-flex" style="align-items: center; justify-content: center;">
                                         @foreach($champion->items as $item)
                                         <div>
-                                            <div style="margin-left: 56px; margin-bottom:-5px;">
+                                            <div style="margin-left: 40px; margin-bottom:-5px;">
                                                 <img class="item-image" src="/images/items/{{ $item->combined_image }}" alt="{{ $item->combined_name }}" width="32" height="32" /></span>
                                             </div>
-                                            <div style="margin-left: 32px;">
+                                            <div style="margin-left: 28px;">
                                                 <img class="tree" src="/images/tree.png" alt="arbre" />
                                             </div>
                                             <div class="d-flex">
-                                                <div style="margin-left: 16px;"><img class="item-image" src="/images/items/{{ $item->base1_image }}" alt="{{ $item->base1_name }}" width="32" height="32" /></div>
-                                                <div style="margin-left: 48px;"><img class="item-image" src="/images/items/{{ $item->base2_image }}" alt="{{ $item->base2_name }}" width="32" height="32" /></div>
+                                                <div style="margin-left: 12px;"><img class="item-image" src="/images/items/{{ $item->base1_image }}" alt="{{ $item->base1_name }}" width="32" height="32" /></div>
+                                                <div style="margin-left: 24px;"><img class="item-image" src="/images/items/{{ $item->base2_image }}" alt="{{ $item->base2_name }}" width="32" height="32" /></div>
                                             </div>
                                         </div>
                                         @endforeach
@@ -92,8 +88,8 @@
             }, {
                 "targets": 4,
                 "orderable": false
-            }]
-            // "lengthMenu": [[6, 12, 18, -1], ['6', '12', '18', 'Tout']]
+            }],
+            "lengthMenu": [[10, 25, -1], ['10', '25', 'Tout']]
         });
     });
 </script>
