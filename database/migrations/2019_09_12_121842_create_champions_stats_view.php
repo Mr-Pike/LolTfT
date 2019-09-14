@@ -15,7 +15,7 @@ class CreateChampionsStatsView extends Migration
     {
         DB::statement("CREATE VIEW _championsStatsView
         AS
-        SELECT C.id, C.name, C.description, C.image,
+        SELECT C.id, C.name, C.description, C.image, C.cost_id,
         L.level,
         CL.level_id, CL.dps, CL.attack_speed, CL.damage, CL.range, CL.health, CL.mana, CL.armor, CL.magic_resistance
         FROM Champions C

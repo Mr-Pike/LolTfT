@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Level;
 use App\ViewChampionStats;
 use App\ViewChampionMain;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -23,7 +24,8 @@ class ChampionController extends BaseController
 
     public function stats()
     {
-        return view('champions.stats');
+        $levels = Level::get();
+        return view('champions.stats', compact('levels'));
     }
 
     public function dataStats($levelId)
@@ -33,7 +35,6 @@ class ChampionController extends BaseController
         return datatables()->of($data)
             ->make(true);
     }
-
 
     // Old method.
     /*public function index()

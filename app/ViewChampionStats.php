@@ -11,5 +11,5 @@ class ViewChampionStats extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['name', 'description', 'level', 'level_id', 'dps', 'attack_speed', 'damage', 'range', 'health', 'mana', 'armor', 'magic_resistance'];
+    protected $fillable = ['name', 'description', 'cost_id', 'level', 'level_id', 'dps', 'attack_speed', 'damage', 'range', 'health', 'mana', 'armor', 'magic_resistance'];
 }

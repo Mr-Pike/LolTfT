@@ -31,7 +31,27 @@ td {
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: 100%;
+}
 
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.5rem 0.5rem;
+    }
+
+    /*.navbar .active {
+        background-image: url('/images/select.png');
+        background-repeat: no-repeat;
+        background-position-x: left;
+        background-position-y: 100%;
+    }*/
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(120, 90, 40, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-dark .navbar-toggler {
+    border: 1px solid #785a28;
 }
 
 .nav-link {
@@ -56,8 +76,8 @@ td {
 
 /**/
 .champions-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
 }
 
