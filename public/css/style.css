@@ -207,3 +207,22 @@ td {
     background-color: #010a14;
     border: 1px solid #785a28;
 }
+
+.card {
+    background-color: #010a14;
+    border: 1px solid #785a28;
+    border-radius: 0rem;
+}
+
+.scroll-card {
+    height: 100px;
+    overflow-y: scroll;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    outline: 1px solid#785a28;
+}

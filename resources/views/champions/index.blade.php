@@ -9,6 +9,52 @@
 @section('content')
     @parent
         <div class="row">
+            <div class="col-xl-6 col-md-6 col-xs-12">
+                <div class="card">
+                    <!--<div class="card-header">Origines</div>-->
+                    <div class="card-body scroll-card">
+                        @foreach ($origins as $origin)
+                            <div class="form-check">
+                                <input class="form-check-input origins" type="checkbox" value="{{ $origin->id }}" checked>
+                                <label class="form-check-label">
+                                    <img class="origins-icon" src="/images/origins/{{ $origin->image }}" alt="{{ $origin->name }}" /> {{ $origin->name }}
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-md-6 col-xs-12 ">
+                <div class="card">
+                    <!--<div class="card-header">Classes</div>-->
+                    <div class="card-body scroll-card">
+                        @foreach ($classes as $class)
+                            <div class="form-check">
+                                <input class="form-check-input classes" type="checkbox" value="{{ $class->id }}" checked>
+                                <label class="form-check-label">
+                                    <img class="classes-icon" src="/images/classes/{{ $class->image }}" alt="{{ $class->name }}" /> {{ $class->name }}
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12 col-md-12 col-xs-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="{{ $origin->id }}" id="showItemBase" checked>
+                    <label class="form-check-label" for="showItemBase">
+                        Afficher les objets de base
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
             <div class="col-xl-12 col-md-12 col-xs-12">
                 <table id="datatable" class="table table-bordered table-striped" width="100%">
                     <thead>
@@ -18,6 +64,8 @@
                             <th>Classes</th>
                             <th>Objets</th>
                             <th>Tiers</th>
+                            <th class="d-none">Origins id</th>
+                            <th class="d-none">Classes id</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,9 +76,9 @@
                                     <span class="d-none d-xl-inline d-lg-line">{{ $champion->name }}</span>
                                 </td>
                                 <td class="align-middle text-sm-center text-md-center text-lg-lef text-xl-left">
-                                    @foreach($champion->origins as $origine)
-                                        <img class="origins-icon" src="/images/origins/{{ $origine->image }}" alt="{{ $origine->name }}" />
-                                        <span class="d-none d-xl-inline d-lg-line">{{ $origine->name }}<br /></span>
+                                    @foreach($champion->origins as $origin)
+                                        <img class="origins-icon" src="/images/origins/{{ $origin->image }}" alt="{{ $origin->name }}" />
+                                        <span class="d-none d-xl-inline d-lg-line">{{ $origin->name }}<br /></span>
                                     @endforeach
                                 </td>
                                 <td class="align-middle text-sm-center text-md-center text-lg-lef text-xl-left">
@@ -46,12 +94,12 @@
                                             <div style="margin-left: 40px; margin-bottom:-5px;">
                                                 <img class="item-image" src="/images/items/{{ $item->combined_image }}" alt="{{ $item->combined_name }}" width="32" height="32" /></span>
                                             </div>
-                                            <div style="margin-left: 28px;">
+                                            <div class="tree-container" style="margin-left: 28px;">
                                                 <img class="tree" src="/images/tree.png" alt="arbre" />
                                             </div>
-                                            <div class="d-flex">
-                                                <div style="margin-left: 12px;"><img class="item-image" src="/images/items/{{ $item->base1_image }}" alt="{{ $item->base1_name }}" width="32" height="32" /></div>
-                                                <div style="margin-left: 24px;"><img class="item-image" src="/images/items/{{ $item->base2_image }}" alt="{{ $item->base2_name }}" width="32" height="32" /></div>
+                                            <div class="tree-container d-flex">
+                                                <div style="margin-left: 12px;"><img class="tree-container item-image" src="/images/items/{{ $item->base1_image }}" alt="{{ $item->base1_name }}" width="32" height="32" /></div>
+                                                <div style="margin-left: 24px;"><img class="tree-container item-image" src="/images/items/{{ $item->base2_image }}" alt="{{ $item->base2_name }}" width="32" height="32" /></div>
                                             </div>
                                         </div>
                                         @endforeach
@@ -61,6 +109,16 @@
                                     <div class="tier-id tier-id-{{ $champion->tier_id}}">
                                         {{ $champion->tier_name }}
                                     </div>
+                                </td>
+                                <td class="d-none">
+                                    @foreach($champion->origins as $origin)
+                                        {{ ($loop->iteration > 1 ? ',' : '').$origin->id }}
+                                    @endforeach
+                                </td>
+                                <td class="d-none">
+                                    @foreach($champion->classes as $class)
+                                        {{ ($loop->iteration > 1 ? ',' : '').$class->id }}
+                                    @endforeach
                                 </td>
                             </tr>
                         @endforeach
@@ -72,25 +130,10 @@
 
 @section('custom-js')
 <script type="text/javascript" src="{{ URL::asset('/js/datatables.min.js') }}"></script>
-<script>
-    $(document).ready(function() {
-        var dataTable =
-        "use strict";
-        $('#datatable').DataTable( {
-            "info": false,
-            "responsive": true,
-            "language": {
-                "url": "/js/datatables-fr.json"
-            },
-            "columnDefs": [{
-                "targets": 3,
-                "orderable": false
-            }, {
-                "targets": 4,
-                "orderable": false
-            }],
-            "lengthMenu": [[10, 25, -1], ['10', '25', 'Tout']]
-        });
-    });
+<script type="text/javascript">
+    var dataTable = "";
+    var classes = [];
+    var origins = [];
 </script>
+<script type="text/javascript" src="{{ URL::asset('/js/champions/main.js') }}"></script>
 @endsection

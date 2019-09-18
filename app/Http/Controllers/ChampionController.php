@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Classs;
 use App\Level;
+use App\Origin;
 use App\ViewChampionStats;
 use App\ViewChampionMain;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -18,13 +20,16 @@ class ChampionController extends BaseController
     public function index()
     {
         $champions = ViewChampionMain::get();
+        $classes = Classs::orderBy('name')->get();
+        $origins = Origin::orderBy('name')->get();
 
-        return view('champions.index', compact('champions'));
+        return view('champions.index', compact('champions', 'classes', 'origins'));
     }
 
     public function stats()
     {
         $levels = Level::get();
+
         return view('champions.stats', compact('levels'));
     }
 
@@ -35,13 +40,4 @@ class ChampionController extends BaseController
         return datatables()->of($data)
             ->make(true);
     }
-
-    // Old method.
-    /*public function index()
-    {
-        $champions = Champion::with('cost', 'tiers', 'classes', 'origins','items')->get();
-        $items = Item::all()->keyBy('id');
-
-        return view('champions.index-old', compact('champions', 'items'));
-    }*/
 }

@@ -18,8 +18,8 @@ class CreateChampionsMainView extends Migration
         SELECT C.id, C.name, C.description, C.enabled, C.tier_id, C.cost_id, C.image,
         T.name AS tier_name,
         CS.cost AS cost_cost,
-        CONCAT('[', GROUP_CONCAT(DISTINCT(CONCAT('{\"name\": \"', O.name, '\", \"image\": \"', O.image,'\"}'))), ']') AS origins,
-        CONCAT('[', GROUP_CONCAT(DISTINCT(CONCAT('{\"name\": \"', CL.name, '\", \"image\": \"', CL.image,'\"}'))), ']') AS classes,
+        CONCAT('[', GROUP_CONCAT(DISTINCT(CONCAT('{\"id\": ', O.id, ', \"name\": \"', O.name, '\", \"image\": \"', O.image,'\"}'))), ']') AS origins,
+        CONCAT('[', GROUP_CONCAT(DISTINCT(CONCAT('{\"id\": ', CL.id, ', \"name\": \"', CL.name, '\", \"image\": \"', CL.image,'\"}'))), ']') AS classes,
         CONCAT('[', GROUP_CONCAT(DISTINCT(CONCAT('{\"combined_name\": \"', I0.name, '\", \"combined_image\": \"', I0.image, '\", \"order_number\": \"', CI.order_number, '\", \"base1_name\": \"', I1.name, '\", \"base1_image\": \"', I1.image, '\", \"base2_name\": \"', I2.name, '\", \"base2_image\": \"', I2.image,'\"}')) ORDER BY CI.order_number), ']') AS items
         FROM Champions C
         INNER JOIN Tiers T ON C.tier_id = T.id
