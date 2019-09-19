@@ -73,5 +73,7 @@ class ChampionsClassesTableSeeder extends Seeder
         ChampionClass::create(['champion_id' => 54, 'class_id' => 5]);
         ChampionClass::create(['champion_id' => 55, 'class_id' => 9]);
         ChampionClass::create(['champion_id' => 56, 'class_id' => 2]);
+        ChampionClass::create(['champion_id' => 57, 'class_id' => 1]);
+        ChampionClass::create(['champion_id' => 57, 'class_id' => 8]);
     }
 }

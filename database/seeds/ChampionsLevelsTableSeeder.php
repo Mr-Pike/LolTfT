@@ -72,6 +72,8 @@ class ChampionsLevelsTableSeeder extends Seeder
         ChampionLevel::create(['champion_id' => 13	 ,'level_id' => 1	 ,'dps' => 30	 ,'attack_speed' => 0.6	 	 ,'damage' => 50	 ,'range' => 1	 ,'health' => 650	 ,'mana' => 150	 ,'armor' => 30	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 56	 ,'level_id' => 1	 ,'dps' => 75	 ,'attack_speed' => 1	 	 ,'damage' => 75	 ,'range' => 1	 ,'health' => 700	 ,'mana' => 25	 ,'armor' => 35	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 26	 ,'level_id' => 1	 ,'dps' => 46	 ,'attack_speed' => 0.7	 	 ,'damage' => 65	 ,'range' => 1	 ,'health' => 550	 ,'mana' => 75	 ,'armor' => 25	 ,'magic_resistance' => 20]);
+        ChampionLevel::create(['champion_id' => 57	 ,'level_id' => 1	 ,'dps' => 69	 ,'attack_speed' => 0.3	 	 ,'damage' => 55	 ,'range' => 2	 ,'health' => 700	 ,'mana' => 125	 ,'armor' => 20	 ,'magic_resistance' => 20]);
+
         ChampionLevel::create(['champion_id' => 27	 ,'level_id' => 2	 ,'dps' => 76	 ,'attack_speed' => 0.65	 ,'damage' => 117	 ,'range' => 1	 ,'health' => 1260	 ,'mana' => 75	 ,'armor' => 25	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 14	 ,'level_id' => 2	 ,'dps' => 50	 ,'attack_speed' => 0.55	 ,'damage' => 90	 ,'range' => 3	 ,'health' => 810	 ,'mana' => 75	 ,'armor' => 20	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 40	 ,'level_id' => 2	 ,'dps' => 101	 ,'attack_speed' => 0.7	 	 ,'damage' => 144	 ,'range' => 1	 ,'health' => 1170	 ,'mana' => 25	 ,'armor' => 20	 ,'magic_resistance' => 20]);
@@ -128,6 +130,8 @@ class ChampionsLevelsTableSeeder extends Seeder
         ChampionLevel::create(['champion_id' => 13	 ,'level_id' => 2	 ,'dps' => 54	 ,'attack_speed' => 0.6	 	 ,'damage' => 90	 ,'range' => 1	 ,'health' => 1170	 ,'mana' => 150	 ,'armor' => 30	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 56	 ,'level_id' => 2	 ,'dps' => 135	 ,'attack_speed' => 1	 	 ,'damage' => 135	 ,'range' => 1	 ,'health' => 1260	 ,'mana' => 25	 ,'armor' => 35	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 26	 ,'level_id' => 2	 ,'dps' => 82	 ,'attack_speed' => 0.7	 	 ,'damage' => 117	 ,'range' => 1	 ,'health' => 990	 ,'mana' => 75	 ,'armor' => 25	 ,'magic_resistance' => 20]);
+        ChampionLevel::create(['champion_id' => 57	 ,'level_id' => 2	 ,'dps' => 99	 ,'attack_speed' => 0.6	 	 ,'damage' => 99	 ,'range' => 2	 ,'health' => 1260	 ,'mana' => 125	 ,'armor' => 20	 ,'magic_resistance' => 20]);
+
         ChampionLevel::create(['champion_id' => 27	 ,'level_id' => 3	 ,'dps' => 152	 ,'attack_speed' => 0.65	 ,'damage' => 234	 ,'range' => 1	 ,'health' => 2520	 ,'mana' => 75	 ,'armor' => 25	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 14	 ,'level_id' => 3	 ,'dps' => 99	 ,'attack_speed' => 0.55	 ,'damage' => 180	 ,'range' => 3	 ,'health' => 1620	 ,'mana' => 75	 ,'armor' => 20	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 40	 ,'level_id' => 3	 ,'dps' => 202	 ,'attack_speed' => 0.7	 	 ,'damage' => 288	 ,'range' => 1	 ,'health' => 2340	 ,'mana' => 25	 ,'armor' => 20	 ,'magic_resistance' => 20]);
@@ -184,5 +188,6 @@ class ChampionsLevelsTableSeeder extends Seeder
         ChampionLevel::create(['champion_id' => 13	 ,'level_id' => 3	 ,'dps' => 108	 ,'attack_speed' => 0.6	 	 ,'damage' => 180	 ,'range' => 1	 ,'health' => 2340	 ,'mana' => 150	 ,'armor' => 30	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 56	 ,'level_id' => 3	 ,'dps' => 270	 ,'attack_speed' => 1	 	 ,'damage' => 270	 ,'range' => 1	 ,'health' => 2520	 ,'mana' => 25	 ,'armor' => 35	 ,'magic_resistance' => 20]);
         ChampionLevel::create(['champion_id' => 26	 ,'level_id' => 3	 ,'dps' => 164	 ,'attack_speed' => 0.7	 	 ,'damage' => 234	 ,'range' => 1	 ,'health' => 1980	 ,'mana' => 75	 ,'armor' => 25	 ,'magic_resistance' => 20]);
+        ChampionLevel::create(['champion_id' => 57	 ,'level_id' => 3	 ,'dps' => 198	 ,'attack_speed' => 0.9	 	 ,'damage' => 198	 ,'range' => 2	 ,'health' => 2250	 ,'mana' => 125	 ,'armor' => 20	 ,'magic_resistance' => 20]);
     }
 }

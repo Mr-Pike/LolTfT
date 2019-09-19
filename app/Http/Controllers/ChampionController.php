@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classs;
+use App\Cost;
 use App\Level;
 use App\Origin;
 use App\ViewChampionStats;
@@ -22,8 +23,9 @@ class ChampionController extends BaseController
         $champions = ViewChampionMain::get();
         $classes = Classs::orderBy('name')->get();
         $origins = Origin::orderBy('name')->get();
+        $costs = Cost::get();
 
-        return view('champions.index', compact('champions', 'classes', 'origins'));
+        return view('champions.index', compact('champions', 'classes', 'origins', 'costs'));
     }
 
     public function stats()

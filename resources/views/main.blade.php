@@ -39,8 +39,8 @@
                             <a class="nav-link" href="{{ route('champions.stats') }}">Statistiques</a>
                         </li>
                         <li class="nav-item {{ Request::route()->getName() == 'items.index' ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('items.index') }}">Objets</a>
-                            </li>
+                            <a class="nav-link" href="{{ route('items.index') }}">Objets</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#">Disabled</a>
                         </li>
@@ -73,7 +73,7 @@
         <footer class="footer">
             <div class="container text-center">
                 <span>
-                    Patch 9.17<br />
+                    Patch 9.19<br />
                     League of Legends et Riot Games sont des marques ou marques déposées de Riot Games, Inc. League of Legends © Riot Games, Inc.
                 </span>
             </div>

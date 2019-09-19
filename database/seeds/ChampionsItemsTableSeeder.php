@@ -238,5 +238,9 @@ class ChampionsItemsTableSeeder extends Seeder
         ChampionItem::create(['champion_id' => 56, 'item_id' => 21, 'order_number' => 1, 'recommended' => true]);
         ChampionItem::create(['champion_id' => 56, 'item_id' => 34, 'order_number' => 2, 'recommended' => true]);
         ChampionItem::create(['champion_id' => 56, 'item_id' => 15, 'order_number' => 3, 'recommended' => true]);
+
+        ChampionItem::create(['champion_id' => 57, 'item_id' => 20, 'order_number' => 1, 'recommended' => true]);
+        ChampionItem::create(['champion_id' => 57, 'item_id' => 35, 'order_number' => 2, 'recommended' => true]);
+        ChampionItem::create(['champion_id' => 57, 'item_id' => 41, 'order_number' => 3, 'recommended' => true]);
     }
 }

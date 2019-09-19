@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-6 col-md-6 col-xs-12 ">
+            <div class="col-xl-6 col-md-6 col-xs-12">
                 <div class="card">
                     <!--<div class="card-header">Classes</div>-->
                     <div class="card-body scroll-card">
@@ -40,7 +40,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="row">
@@ -90,18 +89,20 @@
                                 <td>
                                     <div class="d-flex" style="align-items: center; justify-content: center;">
                                         @foreach($champion->items as $item)
-                                        <div>
-                                            <div style="margin-left: 40px; margin-bottom:-5px;">
-                                                <img class="item-image" src="/images/items/{{ $item->combined_image }}" alt="{{ $item->combined_name }}" width="32" height="32" /></span>
-                                            </div>
-                                            <div class="tree-container" style="margin-left: 28px;">
-                                                <img class="tree" src="/images/tree.png" alt="arbre" />
-                                            </div>
-                                            <div class="tree-container d-flex">
-                                                <div style="margin-left: 12px;"><img class="tree-container item-image" src="/images/items/{{ $item->base1_image }}" alt="{{ $item->base1_name }}" width="32" height="32" /></div>
-                                                <div style="margin-left: 24px;"><img class="tree-container item-image" src="/images/items/{{ $item->base2_image }}" alt="{{ $item->base2_name }}" width="32" height="32" /></div>
-                                            </div>
-                                        </div>
+                                            @if($item->recommended)
+                                                <div>
+                                                    <div style="margin-left: 40px; margin-bottom:-5px;">
+                                                        <img class="item-image" src="/images/items/{{ $item->combined_image }}" alt="{{ $item->combined_name }}" width="32" height="32" /></span>
+                                                    </div>
+                                                    <div class="tree-container" style="margin-left: 28px;">
+                                                        <img class="tree" src="/images/tree.png" alt="arbre" />
+                                                    </div>
+                                                    <div class="tree-container d-flex">
+                                                        <div style="margin-left: 12px;"><img class="tree-container item-image" src="/images/items/{{ $item->base1_image }}" alt="{{ $item->base1_name }}" width="32" height="32" /></div>
+                                                        <div style="margin-left: 24px;"><img class="tree-container item-image" src="/images/items/{{ $item->base2_image }}" alt="{{ $item->base2_name }}" width="32" height="32" /></div>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         @endforeach
                                     </div>
                                 </td>

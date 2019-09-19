@@ -75,5 +75,6 @@ class ChampionsOriginsTableSeeder extends Seeder
         ChampionOrigin::create(['champion_id' => 55, 'origin_id' => 7]);
         ChampionOrigin::create(['champion_id' => 55, 'origin_id' => 1]);
         ChampionOrigin::create(['champion_id' => 56, 'origin_id' => 3]);
+        ChampionOrigin::create(['champion_id' => 57, 'origin_id' => 13]);
     }
 }

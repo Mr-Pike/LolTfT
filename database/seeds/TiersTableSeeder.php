@@ -21,6 +21,7 @@ class TiersTableSeeder extends Seeder
         Tier::create(['name' => 'B']);
         Tier::create(['name' => 'C']);
         Tier::create(['name' => 'D']);
+        Tier::create(['name' => 'E']);
         Tier::create(['name' => '?']);
     }
 }
