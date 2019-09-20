@@ -22,8 +22,13 @@ class Item extends Model
         return $this->belongsTo(Item::class, 'item2_id', 'id');
     }
 
-    public function champions() 
+    public function tiers()
     {
-        return $this->belongsToMany(Champion::class, 'id', 'champion_id');
+        return $this->hasOne(Tier::class, 'id', 'tier_id');
+    }
+
+    public function championsItem()
+    {
+        return $this->hasMany(ChampionItem::class);
     }
 }

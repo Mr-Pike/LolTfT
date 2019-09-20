@@ -11,7 +11,7 @@ class ViewChampionMain extends Model
 
     public $timestamps = false;
     public $appends = [
-        'origines', 'classes', 'items'
+        'origins', 'classes', 'items'
     ];
 
     protected $fillable = ['name', 'description', 'enabled', 'tier_id',	'cost_id', 'image', 'tier_name', 'cost_cost', 'origins', 'classes', 'items'];

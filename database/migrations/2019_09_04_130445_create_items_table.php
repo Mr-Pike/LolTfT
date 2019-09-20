@@ -21,6 +21,13 @@ class CreateItemsTable extends Migration
             $table->boolean('enabled')->default(true);
             $table->string('image', 128)->unique();
 
+            $table->tinyInteger('tier_id')->unsigned()->nullable();
+            $table->foreign('tier_id')
+                ->references('id')
+                ->on('tiers')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
             $table->smallInteger('item1_id')->unsigned()->nullable();
             $table->foreign('item1_id')
                 ->references('id')

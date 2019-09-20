@@ -14,9 +14,9 @@
                     <!--<div class="card-header">Origines</div>-->
                     <div class="card-body scroll-card">
                         @foreach ($origins as $origin)
-                            <div class="form-check">
-                                <input class="form-check-input origins" type="checkbox" value="{{ $origin->id }}" checked>
-                                <label class="form-check-label">
+                            <div class="custom-control custom-checkbox checkbox-lg">
+                                <input class="custom-control-input origins" type="checkbox" id="origin-{{ $origin->id }}" value="{{ $origin->id }}" checked>
+                                <label class="custom-control-label" for="origin-{{ $origin->id }}">
                                     <img class="origins-icon" src="/images/origins/{{ $origin->image }}" alt="{{ $origin->name }}" /> {{ $origin->name }}
                                 </label>
                             </div>
@@ -30,9 +30,9 @@
                     <!--<div class="card-header">Classes</div>-->
                     <div class="card-body scroll-card">
                         @foreach ($classes as $class)
-                            <div class="form-check">
-                                <input class="form-check-input classes" type="checkbox" value="{{ $class->id }}" checked>
-                                <label class="form-check-label">
+                            <div class="custom-control custom-checkbox checkbox-lg">
+                                <input class="custom-control-input classes" type="checkbox" id="class-{{ $class->id }}" value="{{ $class->id }}" checked>
+                                <label class="custom-control-label" for="class-{{ $class->id }}">
                                     <img class="classes-icon" src="/images/classes/{{ $class->image }}" alt="{{ $class->name }}" /> {{ $class->name }}
                                 </label>
                             </div>
@@ -44,9 +44,9 @@
 
         <div class="row">
             <div class="col-xl-12 col-md-12 col-xs-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="{{ $origin->id }}" id="showItemBase" checked>
-                    <label class="form-check-label" for="showItemBase">
+                <div class="custom-control custom-checkbox checkbox-lg">
+                    <input class="custom-control-input" type="checkbox" value="{{ $origin->id }}" id="showItemBase" checked>
+                    <label class="custom-control-label" for="showItemBase">
                         Afficher les objets de base
                     </label>
                 </div>
@@ -70,17 +70,17 @@
                     <tbody>
                         @foreach($champions as $champion)
                             <tr>
-                                <td class="align-middle text-sm-center text-md-center text-lg-lef text-xl-left">
+                                <td class="align-middle text-sm-center text-md-center text-lg-left text-xl-left">
                                     <img class="champions-icon champions-icon-{{ $champion->cost_cost }}" src="/images/champions/{{ $champion->image }}" alt="{{ $champion->name }}" />
                                     <span class="d-none d-xl-inline d-lg-line">{{ $champion->name }}</span>
                                 </td>
-                                <td class="align-middle text-sm-center text-md-center text-lg-lef text-xl-left">
+                                <td class="align-middle text-sm-center text-md-center text-lg-left text-xl-left">
                                     @foreach($champion->origins as $origin)
                                         <img class="origins-icon" src="/images/origins/{{ $origin->image }}" alt="{{ $origin->name }}" />
                                         <span class="d-none d-xl-inline d-lg-line">{{ $origin->name }}<br /></span>
                                     @endforeach
                                 </td>
-                                <td class="align-middle text-sm-center text-md-center text-lg-lef text-xl-left">
+                                <td class="align-middle text-sm-center text-md-center text-lg-left text-xl-left">
                                     @foreach($champion->classes as $class)
                                         <img class="classes-icon" src="/images/classes/{{ $class->image }}" alt="{{ $class->name }}" />
                                         <span class="d-none d-xl-inline d-lg-line">{{ $class->name }}<br /></span>
@@ -136,5 +136,5 @@
     var classes = [];
     var origins = [];
 </script>
-<script type="text/javascript" src="{{ URL::asset('/js/champions/main.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('/js/champions/index.js') }}"></script>
 @endsection
