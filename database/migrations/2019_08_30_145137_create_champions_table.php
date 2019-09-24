@@ -14,7 +14,6 @@ class CreateChampionsTable extends Migration
     public function up()
     {
         Schema::create('champions', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->smallIncrements('id')->unsigned();
             $table->string('name', 128)->unique();
             $table->mediumText('description')->nullable();

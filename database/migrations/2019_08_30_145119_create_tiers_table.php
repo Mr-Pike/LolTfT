@@ -14,7 +14,6 @@ class CreateTiersTable extends Migration
     public function up()
     {
         Schema::create('tiers', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->tinyIncrements('id')->unsigned();
             $table->char('name', 1)->unique();
         });

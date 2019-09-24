@@ -14,7 +14,6 @@ class CreateClassesTable extends Migration
     public function up()
     {
         Schema::create('classes', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->tinyIncrements('id')->unsigned();
             $table->string('name', 128)->unique();
             $table->mediumText('description');

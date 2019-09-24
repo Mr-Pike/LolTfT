@@ -14,7 +14,6 @@ class CreateOriginsTable extends Migration
     public function up()
     {
         Schema::create('origins', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->tinyIncrements('id')->unsigned();
             $table->string('name', 128)->unique();
             $table->mediumText('description');

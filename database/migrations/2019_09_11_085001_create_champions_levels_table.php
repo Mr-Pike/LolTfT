@@ -14,7 +14,6 @@ class CreateChampionsLevelsTable extends Migration
     public function up()
     {
         Schema::create('champions_levels', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
 
             $table->smallInteger('dps')->unsigned();
             $table->float('attack_speed')->unsigned();

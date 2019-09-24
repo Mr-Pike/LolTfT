@@ -14,7 +14,6 @@ class CreateLevelsTable extends Migration
     public function up()
     {
         Schema::create('levels', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->tinyIncrements('id')->unsigned();
             $table->tinyInteger('level')->unsigned()->unique();
         });

@@ -14,8 +14,6 @@ class CreateChampionsOriginsTable extends Migration
     public function up()
     {
         Schema::create('champions_origins', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-
             $table->smallInteger('champion_id')->unsigned();
             $table->foreign('champion_id')
                 ->references('id')

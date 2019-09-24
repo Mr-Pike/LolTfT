@@ -14,8 +14,6 @@ class CreateChampionsItemsTable extends Migration
     public function up()
     {
         Schema::create('champions_items', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-
             $table->smallIncrements('id')->unsigned();
 
             $table->smallInteger('champion_id')->unsigned();

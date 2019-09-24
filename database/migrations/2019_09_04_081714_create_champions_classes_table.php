@@ -14,8 +14,6 @@ class CreateChampionsClassesTable extends Migration
     public function up()
     {
         Schema::create('champions_classes', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-
             $table->smallInteger('champion_id')->unsigned();
             $table->foreign('champion_id')
                 ->references('id')
