@@ -8,23 +8,22 @@
 
 @section('content')
     @parent
-        {{--<div class="row">
+        <div class="row">
             <div class="col-xl-12 col-md-12 col-xs-12">
-                <table class="table">
-                    <tr>
+                <div class="d-flex container-item-global">
+                    <div data-id="0" class="p-2 flex-fill text-center container-item active">
+                        <img class="item-image-lg" src="/images/items/All.png" alt="Tous les objets" title="Tous les objets" />
+                    </div>
                     @foreach($items as $item)
                         @if($item->item1_id == null && $item->item2_id == null)
-                            <td class="align-middle text-sm-center text-md-center text-lg-center text-xl-center">
-                                <div class="container-item active">
-                                    <img class="item-image-lg" src="/images/items/{{ $item->image }}" alt="{{ $item->name }}" />
-                                </div>
-                            </td>
+                            <div data-id="{{ $item->id }}" class="p-2 flex-fill text-center container-item">
+                                <img class="item-image-lg" src="/images/items/{{ $item->image }}" alt="{{ $item->name }}" title="{{ $item->name }}" />
+                            </div>
                         @endif
                     @endforeach
-                    </tr>
-                </table>
+                </div>
             </div>
-        </div>--}}
+        </div>
 
         <div class="row mt-4">
             <div class="col-xl-12 col-md-12 col-xs-12">
@@ -35,7 +34,7 @@
                             <th>Objet combiné</th>
                             <th>Champions</th>
                             <th>Tiers</th>
-                            <th>Id objet base</th>
+                            <th class="d-none">Id objet base</th>
                             <th class="d-none">Nom des champions</th>
                         </tr>
                     </thead>
@@ -62,10 +61,10 @@
                                             {{ $item->tier_name }}
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="d-none">
                                             {{ $item->item1_id }},{{ $item->item2_id }}
                                     </td>
-                                    <td>
+                                    <td class="d-none">
                                         @if($item->champions != null)
                                             @foreach($item->champions as $champion)
                                                 {{ $champion->name }}
@@ -85,6 +84,7 @@
 <script type="text/javascript" src="{{ URL::asset('/js/datatables.min.js') }}"></script>
 <script type="text/javascript">
     var dataTable = "";
+    var itemSelected = 0;
 </script>
 <script type="text/javascript" src="{{ URL::asset('/js/items/index.js') }}"></script>
 @endsection

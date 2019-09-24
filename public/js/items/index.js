@@ -1,32 +1,22 @@
 // Filter on origins and classes.
-/*$.fn.dataTable.ext.search.push(
+$.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
 
-        if (origins.length === 0 &&
-            classes.length === 0
-            ) {
-                return true;
+        if (itemSelected === 0) {
+            return true;
         }
 
         // Get row of the origin and class.
-        var rowOrigins = data[5].split(' ').join('').split(',');
-        var rowClasses = data[6].split(' ').join('').split(',');
+        var rowItemsId = data[4].split(' ').join('').split(',').map(Number);
+        console.log(rowItemsId);
 
-        for (var i = 0; i < rowOrigins.length; i++) {
-            if (origins.indexOf(rowOrigins[i]) !== -1) {
-                return true;
-            }
-        }
-
-        for (var i = 0; i < rowClasses.length; i++) {
-            if (classes.indexOf(rowClasses[i]) !== -1) {
-                return true;
-            }
+        if (rowItemsId.indexOf(itemSelected) !== -1) {
+            return true;
         }
 
         return false;
     }
-);*/
+);
 
 $(document).ready(function() {
     "use strict";
@@ -58,7 +48,7 @@ $(document).ready(function() {
         }, {
             "targets": 4,
             "orderable": false,
-            "visible": true,
+            "visible": false,
             "searchable": true
         }, {
             "targets": 5,
@@ -69,10 +59,15 @@ $(document).ready(function() {
         "lengthMenu": [[10, 25, -1], ['10', '25', 'Tout']]
     });
 
-    // User change classes or origins.
-    /*$('.classes, .origins').change( function() {
+    $('.container-item').click( function() {
+        // Remove & Add active class.
+        $('.container-item').removeClass('active');
+        $(this).addClass('active');
+
+        // Get item selected.
+        itemSelected = $(this).data().id;
 
         // Refresh datatable.
         dataTable.draw();
-    } );*/
-});
+    } );
+} );

@@ -123,12 +123,13 @@ td {
     height: 30px;
 }
 
-/*.container-item.active {
-    background: url('/images/select.png');
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: 100%;
-}*/
+.container-item-global {
+    overflow: auto;
+}
+
+.container-item.active {
+    border-bottom: 2px solid #785a28;
+}
 
 .tier-id {
     width: 30px;
