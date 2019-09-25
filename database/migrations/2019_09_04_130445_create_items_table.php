@@ -14,7 +14,8 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->smallIncrements('id')->unsigned();
+            $table->smallInteger('id')->unsigned();
+            $table->primary('id');
             $table->string('name', 128)->unique();
             $table->mediumText('description');
             $table->boolean('enabled')->default(true);
@@ -40,6 +41,8 @@ class CreateItemsTable extends Migration
                 ->on('items')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+
+            // $table->primary('id');
         });
     }
 

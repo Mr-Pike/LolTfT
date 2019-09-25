@@ -14,7 +14,7 @@ class CreateChampionsTable extends Migration
     public function up()
     {
         Schema::create('champions', function (Blueprint $table) {
-            $table->smallIncrements('id')->unsigned();
+            $table->smallInteger('id')->unsigned()->primary();
             $table->string('name', 128)->unique();
             $table->mediumText('description')->nullable();
             $table->boolean('enabled')->default(true);
