@@ -13,6 +13,12 @@
                 <div class="card">
                     <!--<div class="card-header">Origines</div>-->
                     <div class="card-body scroll-card">
+                        <div class="custom-control custom-checkbox checkbox-lg">
+                            <input id="origin-0"  type="checkbox" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="origin-0">
+                                Toutes les origines
+                            </label>
+                        </div>
                         @foreach ($origins as $origin)
                             <div class="custom-control custom-checkbox checkbox-lg">
                                 <input class="custom-control-input origins" type="checkbox" id="origin-{{ $origin->id }}" value="{{ $origin->id }}" checked>
@@ -29,6 +35,12 @@
                 <div class="card">
                     <!--<div class="card-header">Classes</div>-->
                     <div class="card-body scroll-card">
+                        <div class="custom-control custom-checkbox checkbox-lg">
+                            <input id="class-0"  type="checkbox" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="class-0">
+                                Toutes les classes
+                            </label>
+                        </div>
                         @foreach ($classes as $class)
                             <div class="custom-control custom-checkbox checkbox-lg">
                                 <input class="custom-control-input classes" type="checkbox" id="class-{{ $class->id }}" value="{{ $class->id }}" checked>
