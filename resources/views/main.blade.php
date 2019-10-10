@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="shortcut icon" href="{{ URL::asset('/images/favicon.ico') }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="">
@@ -73,7 +74,7 @@
         <footer class="footer">
             <div class="container text-center">
                 <span>
-                    Patch 9.19<br />
+                    Patch 9.20<br />
                     League of Legends et Riot Games sont des marques ou marques déposées de Riot Games, Inc. League of Legends © Riot Games, Inc.
                 </span>
             </div>

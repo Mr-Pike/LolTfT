@@ -1,13 +1,6 @@
 // Filter on origins and classes.
 $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
-
-        if (origins.length === 0 &&
-            classes.length === 0
-            ) {
-                return true;
-        }
-
         // Get row of the origin and class.
         var rowOrigins = data[5].split(' ').join('').split(',');
         var rowClasses = data[6].split(' ').join('').split(',');
@@ -54,10 +47,33 @@ $(document).ready(function() {
         }],
         "lengthMenu": [[10, 25, -1], ['10', '25', 'Tout']]
     });
+    refreshClassesOrigins();
 
     // User change classes or origins.
-    $('.classes, .origins').change( function() {
+    $('.classes, .origins').change(refreshClassesOrigins);
 
+    // Show / Hide items base.
+    $('#showItemBase').change( function () {
+        $('.tree-container').hide();
+        if ($(this).is(':checked')) {
+            $('.tree-container').show();
+        }
+    } );
+
+    // Check/Uncheck all origins.
+    $('#origin-0').change( function () {
+        $('.origins').prop('checked', $(this).is(':checked'));
+        refreshClassesOrigins();
+    });
+
+    // Check/Uncheck all classes.
+    $('#class-0').change( function () {
+        $('.classes').prop('checked', $(this).is(':checked'));
+        refreshClassesOrigins();
+    });
+
+
+    function refreshClassesOrigins() {
         // Get classes checked.
         classes = [];
         $('.classes:checked').each( function() {
@@ -70,15 +86,10 @@ $(document).ready(function() {
             origins.push($(this).val());
         } );
 
+        $('#class-0').prop('checked', (classes.length == $('.classes').length));
+        $('#origin-0').prop('checked', (origins.length == $('.origins').length));
+
         // Refresh datatable.
         dataTable.draw();
-    } );
-
-    $('#showItemBase').change( function () {
-        if ($(this).is(':checked')) {
-            $('.tree-container').show()
-        } else {
-            $('.tree-container').hide()
-        }
-    } );
+    }
 });
